@@ -1,0 +1,29 @@
+[template]
+name = "rust"
+language = "Rust"
+description = "Rust CLI template with cargo, CI/CD, and standard structure"
+version = "1.0.0"
+
+[placeholders]
+# Available placeholders for interpolation
+name = "Project name (kebab-case)"
+description = "Short description of the project"
+
+[files]
+# Files to be generated from this template
+include = [
+  "Cargo.toml",
+  "src/main.rs",
+  "README.md",
+  ".github/workflows/ci.yml"
+]
+
+[gitignore]
+# Rust-specific gitignore template name for GitHub API
+template = "Rust"
+
+[ci]
+# CI workflow configuration
+workflow_name = "CI"
+branches = ["main", "develop"]
+runs_on = "ubuntu-latest"

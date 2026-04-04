@@ -6,8 +6,10 @@ version = "1.0.0"
 
 [placeholders]
 # Available placeholders for interpolation
-name = "Project name (kebab-case)"
+name = "Project name (kebab-case, used as binary name)"
 description = "Short description of the project"
+github_org = "GitHub organization/username"
+github_repo = "GitHub repository name"
 
 [files]
 # Files to be generated from this template
@@ -15,7 +17,11 @@ include = [
   "Cargo.toml",
   "src/main.rs",
   "README.md",
-  ".github/workflows/ci.yml"
+  ".github/workflows/ci.yml",
+  ".github/workflows/release.yml",
+  ".gitignore",
+  "install.sh",
+  "install.ps1"
 ]
 
 [gitignore]

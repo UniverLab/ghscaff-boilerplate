@@ -1,5 +1,5 @@
 # install.ps1 — download and install {{name}} on Windows
-# Usage: irm https://raw.githubusercontent.com/{{github_org}}/{{github_repo}}/main/install.ps1 | iex
+# Usage: irm https://raw.githubusercontent.com/{{github_org}}/{{github_repo}}/main/scripts/install.ps1 | iex
 #
 # Options (set as env vars before running):
 #   $env:VERSION    = "0.1.0"           # pin a specific version

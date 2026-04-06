@@ -1,6 +1,6 @@
 #!/bin/sh
 # install.sh — download and install {{name}} from GitHub Releases
-# Usage: curl -fsSL https://raw.githubusercontent.com/{{github_org}}/{{github_repo}}/main/install.sh | sh
+# Usage: curl -fsSL https://raw.githubusercontent.com/{{github_org}}/{{github_repo}}/main/scripts/install.sh | sh
 set -eu
 
 REPO="{{github_org}}/{{github_repo}}"

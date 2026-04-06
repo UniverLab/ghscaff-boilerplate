@@ -20,8 +20,8 @@ include = [
   ".github/workflows/ci.yml",
   ".github/workflows/release.yml",
   ".gitignore",
-  "install.sh",
-  "install.ps1"
+  "scripts/install.sh",
+  "scripts/install.ps1"
 ]
 
 [gitignore]

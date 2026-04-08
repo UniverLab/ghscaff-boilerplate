@@ -108,7 +108,7 @@ jobs:
         if: matrix.archive == 'tar.gz'
         run: |
           cd target/${{ matrix.target }}/release
-          tar czf ../../../{{name}}-${{ needs.create-tag.outputs.tag }}-${{ matrix.target }}.tar.gz {{name}}
+          tar -czf ../../../{{name}}-${{ needs.create-tag.outputs.tag }}-${{ matrix.target }}.tar.gz {{name}}
           cd ../../..
 
       - name: Package (windows)

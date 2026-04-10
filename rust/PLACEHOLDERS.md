@@ -63,7 +63,7 @@ This document describes all the placeholders used in the Rust template that `ghs
 | `install.sh` | `{{name}}`, `{{github_org}}`, `{{github_repo}}` | Unix installation script |
 | `install.ps1` | `{{name}}`, `{{github_org}}`, `{{github_repo}}` | Windows installation script |
 | `.github/workflows/ci.yml` | None | Generic, no placeholders needed |
-| `.github/workflows/release.yml` | `{{name}}` | Binary name for packaging and artifacts |
+| `.github/workflows/release.yml` | `{{name}}` | Binary name for workflow input |
 | `.gitignore` | None | Standard Rust gitignore, no placeholders |
 
 ---

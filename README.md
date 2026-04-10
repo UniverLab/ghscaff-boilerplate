@@ -6,17 +6,6 @@ This repository contains the source templates that power ghscaff's repository sc
 
 ---
 
-## Available Templates
-
-| Template | Description | Status |
-|----------|-------------|--------|
-| `rust` | Rust CLI project with Cargo, CI/CD, and standard structure | ✅ v1 |
-| `python` | Python package with poetry and pytest (planned) | 📋 v2 |
-| `node` | Node.js/TypeScript with npm and Jest (planned) | 📋 v2 |
-| `java` | Java/Spring Boot with Maven (planned) | 📋 v2 |
-
----
-
 ## Template Structure
 
 Each template is organized as:
@@ -263,14 +252,6 @@ Update the version in `template.toml` when you make changes.
 MIT — see [LICENSE](LICENSE) for details.
 
 Templates contributed to this repository are also licensed under MIT unless otherwise specified.
-
----
-
-## Support
-
-- 📖 [ghscaff Documentation](https://github.com/JheisonMB/ghscaff)
-- 💬 [GitHub Issues](https://github.com/JheisonMB/ghscaff-boilerplate/issues)
-- 🐦 Twitter: [@JheisonMB](https://twitter.com/JheisonMB)
 
 ---
 

@@ -1,0 +1,34 @@
+[template]
+name = "python-module"
+language = "Python"
+description = "Python scientific module with CLI, tests, and optional publish to PyPI"
+version = "1.0.0"
+
+[placeholders]
+name = "Project name (snake_case)"
+description = "Short description of the project"
+github_org = "GitHub organization/username"
+github_repo = "GitHub repository name"
+
+[files]
+include = [
+  "pyproject.toml",
+  "src/__init__.py",
+  "src/core.py",
+  "src/cli.py",
+  "tests/__init__.py",
+  "tests/test_core.py",
+  "README.md",
+  "CONTRIBUTING.md",
+  ".github/workflows/ci.yml",
+  ".gitignore",
+  "secrets.toml"
+]
+
+[gitignore]
+template = "Python"
+
+[ci]
+workflow_name = "CI"
+branches = ["main", "develop"]
+runs_on = "ubuntu-latest"

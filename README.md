@@ -13,12 +13,21 @@ Each template is organized as:
 ```
 template-name/
 ├── template.toml          # Metadata and configuration
-├── Cargo.toml             # Package manifest (with {{name}}, {{description}})
-├── src/main.rs            # Entry point boilerplate
+├── pyproject.toml         # Python package manifest (or Cargo.toml for Rust)
+├── src/                   # Source code
+├── tests/                 # Test files
 ├── README.md              # Template with placeholders
 ├── .github/workflows/ci.yml
 └── .gitignore
 ```
+
+### Available Templates
+
+| Template | Language | Description |
+|----------|----------|-------------|
+| `rust` | Rust | CLI with Cargo, CI/CD, and standard structure |
+| `python-fastapi` | Python | FastAPI daemon with uvicorn, SQLAlchemy, Pydantic |
+| `python-module` | Python | Scientific module with CLI, tests, and optional PyPI publish |
 
 ### `template.toml`
 

@@ -35,6 +35,7 @@ This document describes all the placeholders used in the Rust template that `ghs
 **Used in**:
 - `install.sh`: `REPO="{{github_org}}/{{github_repo}}"`
 - `install.ps1`: `$Repo = "{{github_org}}/{{github_repo}}"`
+- `Cargo.toml`: `repository = "https://github.com/{{github_org}}/{{github_repo}}"`
 - `README.md`: Installation and documentation links
 
 **Example**: `anomalyco` or `JheisonMB`
@@ -47,6 +48,7 @@ This document describes all the placeholders used in the Rust template that `ghs
 **Used in**:
 - `install.sh`: `REPO="{{github_org}}/{{github_repo}}"`
 - `install.ps1`: `$Repo = "{{github_org}}/{{github_repo}}"`
+- `Cargo.toml`: `repository = "https://github.com/{{github_org}}/{{github_repo}}"`
 - `README.md`: Installation and documentation links
 
 **Example**: `my-awesome-tool`
@@ -57,7 +59,7 @@ This document describes all the placeholders used in the Rust template that `ghs
 
 | File | Placeholders | Notes |
 |------|-------------|-------|
-| `Cargo.toml` | `{{name}}`, `{{description}}` | Standard Rust package metadata |
+| `Cargo.toml` | `{{name}}`, `{{description}}`, `{{github_org}}`, `{{github_repo}}` | Package metadata; `license-file = "LICENSE"` needs the LICENSE ghscaff writes |
 | `src/main.rs` | `{{name}}` | In comments and binary name |
 | `README.md` | `{{name}}`, `{{description}}`, `{{github_org}}`, `{{github_repo}}` | Full documentation |
 | `install.sh` | `{{name}}`, `{{github_org}}`, `{{github_repo}}` | Unix installation script |

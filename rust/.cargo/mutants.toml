@@ -1,0 +1,15 @@
+# cargo-mutants configuration. Mutation testing runs in CI
+# (UniverLab/workflows rust-mutants.yml), never on a developer machine.
+#
+# Exclude a mutant only when it is provably EQUIVALENT: the mutated
+# expression cannot change any observable behaviour on any input. Each entry
+#   - names the function and the operator, never a line number (lines move);
+#   - is a TOML literal string ('...'), so regex escapes need no doubling;
+#   - carries a one-line proof as the comment directly above it.
+# If the proof only holds because the code is dead, delete the dead code
+# instead of excluding the mutant.
+#
+# Example:
+#   # equivalent: `x | y` and `x ^ y` agree because the two masks never overlap.
+#   'src/encode\.rs:.*: replace \| with \^ in pack_bits'
+exclude_re = []

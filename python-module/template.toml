@@ -30,5 +30,5 @@ template = "Python"
 
 [ci]
 workflow_name = "CI"
-branches = ["main", "develop"]
+branches = ["main"]
 runs_on = "ubuntu-latest"

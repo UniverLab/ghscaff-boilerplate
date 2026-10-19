@@ -11,7 +11,7 @@ uv sync
 uv run pytest
 ```
 
-Branch off `develop` for all changes. PRs go to `develop`, not `main`.
+Trunk-based: branch off `main` and open the PR against `main`.
 
 ## CI/CD and required secrets
 

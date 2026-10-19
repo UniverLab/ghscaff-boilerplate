@@ -13,9 +13,10 @@ github_repo = "GitHub repository name"
 [files]
 include = [
   "pyproject.toml",
-  "src/__init__.py",
-  "src/core.py",
-  "src/cli.py",
+  "src/{{module}}/__init__.py",
+  "src/{{module}}/core.py",
+  "src/{{module}}/cli.py",
+  "tests/test_cli.py",
   "tests/__init__.py",
   "tests/test_core.py",
   "README.md",
@@ -30,5 +31,5 @@ template = "Python"
 
 [ci]
 workflow_name = "CI"
-branches = ["main", "develop"]
+branches = ["main"]
 runs_on = "ubuntu-latest"

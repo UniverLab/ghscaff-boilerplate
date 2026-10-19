@@ -18,7 +18,7 @@ uv sync
 ### Run CLI
 
 ```bash
-uv run python -m src.cli --name world
+uv run {{name}} --name world
 ```
 
 ### Test
@@ -42,16 +42,27 @@ uv run ruff check .
 uv run mypy src/
 ```
 
+### Quality gate
+
+CI runs the lab's strict gate ([UniverLab/workflows](https://github.com/UniverLab/workflows/blob/main/docs/quality-gate.md)): an 80 % coverage gate, file and function size, complexity, unused dependencies, known vulnerabilities and licences. Commit `uv.lock` (`uv lock`): CI installs with `--frozen`. To run the gate locally:
+
+```bash
+uv run pytest --cov
+bash path/to/UniverLab/workflows/scripts/python-quality.sh
+```
+
 ## Project structure
 
 ```
 {{name}}/
 ├── pyproject.toml
 ├── src/
-│   ├── __init__.py
-│   ├── core.py           # Core logic
-│   └── cli.py            # CLI entry point
+│   └── {{module}}/
+│       ├── __init__.py
+│       ├── core.py       # Core logic
+│       └── cli.py        # CLI entry point
 ├── tests/
+│   ├── test_cli.py
 │   └── test_core.py
 └── README.md
 ```

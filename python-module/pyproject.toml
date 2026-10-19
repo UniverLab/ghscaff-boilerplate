@@ -4,20 +4,22 @@ version = "0.1.0"
 description = "{{description}}"
 readme = "README.md"
 requires-python = ">=3.11"
-license = "MIT"
-dependencies = [
-  "numpy>=2.0",
-]
+license = "{{license}}"
+dependencies = []
 
-[project.optional-dependencies]
+# Development tools live in a dependency group (PEP 735), not in an extra:
+# `uv sync` installs it by default, and the lab's quality gate (deptry) would
+# otherwise report pytest, ruff and mypy as unused runtime dependencies.
+[dependency-groups]
 dev = [
   "pytest>=8.0",
+  "pytest-cov>=5.0",
   "ruff>=0.8",
   "mypy>=1.13",
 ]
 
 [project.scripts]
-{{name}} = "src.cli:main"
+{{name}} = "{{module}}.cli:main"
 
 [build-system]
 requires = ["hatchling"]
@@ -36,3 +38,8 @@ strict = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+# python-ci gates coverage at 80 % by default.
+[tool.coverage.run]
+source = ["{{module}}"]
+branch = true

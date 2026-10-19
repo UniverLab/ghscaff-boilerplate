@@ -3,6 +3,8 @@
 import argparse
 import sys
 
+from {{module}}.core import hello
+
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
@@ -11,8 +13,6 @@ def main(argv: list[str] | None = None) -> int:
     )
     parser.add_argument("--name", default="world", help="Name to greet")
     args = parser.parse_args(argv)
-
-    from src.core import hello
 
     print(hello(args.name))
     return 0

@@ -18,7 +18,7 @@ uv sync
 ### Run CLI
 
 ```bash
-uv run python -m src.cli --name world
+uv run {{name}} --name world
 ```
 
 ### Test
@@ -57,10 +57,12 @@ bash path/to/UniverLab/workflows/scripts/python-quality.sh
 {{name}}/
 ├── pyproject.toml
 ├── src/
-│   ├── __init__.py
-│   ├── core.py           # Core logic
-│   └── cli.py            # CLI entry point
+│   └── {{module}}/
+│       ├── __init__.py
+│       ├── core.py       # Core logic
+│       └── cli.py        # CLI entry point
 ├── tests/
+│   ├── test_cli.py
 │   └── test_core.py
 └── README.md
 ```

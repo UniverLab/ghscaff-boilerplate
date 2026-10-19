@@ -5,9 +5,7 @@ description = "{{description}}"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "{{license}}"
-dependencies = [
-  "numpy>=2.0",
-]
+dependencies = []
 
 # Development tools live in a dependency group (PEP 735), not in an extra:
 # `uv sync` installs it by default, and the lab's quality gate (deptry) would
@@ -21,7 +19,7 @@ dev = [
 ]
 
 [project.scripts]
-{{name}} = "src.cli:main"
+{{name}} = "{{module}}.cli:main"
 
 [build-system]
 requires = ["hatchling"]
@@ -43,5 +41,5 @@ testpaths = ["tests"]
 
 # python-ci gates coverage at 80 % by default.
 [tool.coverage.run]
-source = ["src"]
+source = ["{{module}}"]
 branch = true

@@ -1,0 +1,42 @@
+name: Audit
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # The univerlab.audit/1 validator lives in the public univerlab repo,
+      # the one place the contract is defined. Only the files it needs.
+      - uses: actions/checkout@v4
+        with:
+          repository: UniverLab/univerlab
+          path: .univerlab
+          sparse-checkout: |
+            scripts/audit.ts
+            src/lib/audit
+            public/schemas/audit
+          sparse-checkout-cone-mode: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Contract
+        run: node .univerlab/scripts/audit.ts validate audit
+
+      - name: No credentials committed
+        run: |
+          pattern='gh[pousr]_[A-Za-z0-9]{36}|github_pat_[A-Za-z0-9_]{40,}|sk-(ant-)?[A-Za-z0-9_-]{24,}|AKIA[0-9A-Z]{16}|xox[abp]-[A-Za-z0-9-]{10,}|-----BEGIN [A-Z ]*PRIVATE KEY'
+          if grep -rEIn --exclude-dir=.git --exclude-dir=.univerlab "$pattern" .; then
+            echo "::error::A committed file looks like it holds a credential. Redact it and rotate the secret."
+            exit 1
+          fi

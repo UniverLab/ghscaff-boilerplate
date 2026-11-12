@@ -28,6 +28,7 @@ template-name/
 | `rust` | Rust | CLI with Cargo, CI/CD, and standard structure |
 | `python-fastapi` | Python | FastAPI daemon with uvicorn, SQLAlchemy, Pydantic |
 | `python-module` | Python | Scientific module with CLI, tests, and optional PyPI publish |
+| `audit` | Audit | One UniverLab audit engagement (private repo): brief, sandbox, `univerlab.audit/1` contract, report |
 
 ### `template.toml`
 

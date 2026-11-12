@@ -1,0 +1,31 @@
+[template]
+name = "audit"
+language = "Audit"
+description = "One UniverLab audit engagement, delivered to the client as a private repo: brief, sandbox, evidence, univerlab.audit/1 contract and report"
+version = "1.0.0"
+
+[placeholders]
+name = "Repository name, which is also the audit slug (audit-<client>-<yyyy-mm>)"
+description = "Audit title, e.g. Security audit of <system>"
+github_org = "GitHub organization"
+
+[files]
+include = [
+  "README.md",
+  "CONTRIBUTING.md",
+  "audit/audit.json",
+  "audit/assets/.gitkeep",
+  "brief/AUDITOR-BRIEF.md",
+  "report/README.md",
+  "sandbox/README.md",
+  "sandbox/.gitignore",
+  ".github/workflows/ci.yml"
+]
+
+[gitignore]
+template = "TeX"
+
+[ci]
+workflow_name = "Audit"
+branches = ["main"]
+runs_on = "ubuntu-latest"

@@ -1,7 +1,7 @@
 [template]
 name = "audit"
 language = "Audit"
-description = "One UniverLab audit engagement: brief, evidence, the univerlab.audit/1 contract and the report"
+description = "One UniverLab audit engagement, delivered to the client as a private repo: brief, sandbox, evidence, univerlab.audit/1 contract and report"
 version = "1.0.0"
 
 [placeholders]

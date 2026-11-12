@@ -1,0 +1,31 @@
+{
+  "contract": "univerlab.audit/1",
+  "meta": {
+    "title": "{{description}}",
+    "language": "en",
+    "client": { "name": "<client>" },
+    "auditors": [{ "name": "<auditor>" }],
+    "auditPeriod": { "start": "2026-01-01", "end": "2026-01-01" },
+    "version": "0.1",
+    "status": "draft",
+    "scope": "<one paragraph: what is audited, at which commits or versions, and what is out of scope>"
+  },
+  "visibility": "private",
+  "access": { "emails": ["hola@univerlab.org"] },
+  "cover": { "layout": { "type": "band" } },
+  "assets": [],
+  "deliverables": {},
+  "findings": [],
+  "sources": [],
+  "glossary": [],
+  "sections": [
+    {
+      "id": "summary",
+      "title": "Summary",
+      "layout": { "type": "single" },
+      "blocks": [
+        { "type": "prose", "markdown": "Draft. The auditor replaces this section with the findings summary." }
+      ]
+    }
+  ]
+}

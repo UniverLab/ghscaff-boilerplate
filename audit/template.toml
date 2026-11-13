@@ -5,7 +5,7 @@ description = "One UniverLab audit engagement, delivered to the client as a priv
 version = "1.0.0"
 
 [placeholders]
-name = "Repository name, which is also the audit slug (audit-<client>-<yyyy-mm>)"
+name = "Repository name, which is also the audit slug (audit-<system>); a re-audit continues in the same repository"
 description = "Audit title, e.g. Security audit of <system>"
 github_org = "GitHub organization"
 
@@ -14,7 +14,7 @@ include = [
   "README.md",
   "CONTRIBUTING.md",
   "audit/audit.json",
-  "audit/assets/.gitkeep",
+  "audit/assets/.gitattributes",
   "brief/AUDITOR-BRIEF.md",
   "report/README.md",
   "sandbox/README.md",

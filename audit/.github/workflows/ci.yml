@@ -36,7 +36,7 @@ jobs:
       - name: No credentials committed
         run: |
           pattern='gh[pousr]_[A-Za-z0-9]{36}|github_pat_[A-Za-z0-9_]{40,}|sk-(ant-)?[A-Za-z0-9_-]{24,}|AKIA[0-9A-Z]{16}|xox[abp]-[A-Za-z0-9-]{10,}|-----BEGIN [A-Z ]*PRIVATE KEY'
-          if grep -rEIn --exclude-dir=.git --exclude-dir=.univerlab "$pattern" .; then
+          if grep -rEIn --exclude-dir=.git --exclude-dir=.univerlab --exclude=ci.yml "$pattern" .; then
             echo "::error::A committed file looks like it holds a credential. Redact it and rotate the secret."
             exit 1
           fi

@@ -1,0 +1,2 @@
+# Evidence is hashed in audit.json: store every byte as it is.
+* -text
